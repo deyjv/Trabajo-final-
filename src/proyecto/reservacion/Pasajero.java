@@ -77,12 +77,7 @@ public class Pasajero {
     public String toString() {
         return "Pasajero " + "nombre= " + nombre + " apellido1= " + apellido1 + " apellido2= " + apellido2 + " nacionalidad= " + nacionalidad + " cedula= " + cedula + " fechaNacimiento= " + fechaNacimiento ;
     }
+    
    
-    public static void main(String[] args) {
-        
-        Pasajero pasa = new Pasajero("felix","hernandez","rose","Costaricense",700000000,"15/11/2003");//este es el objeto pasajero
-        System.out.println(pasa);//aqui lo imprimimos por una prueba de rutina 
-    }
-    
-    
+ 
 }

@@ -113,27 +113,7 @@ public class Tiquete {
                 ", numeroAsiento=" + numeroAsiento + ", puertaEmbarque=" + puertaEmbarque + ", codigoAerolinea=" + codigoAerolinea + '}';
     }
     
-    public static void main(String[] args) {
-        
-      
-Pasajero pasajero = new Pasajero("felix","hernandez","rose","Costaricense",700000000,"15/11/2003");
-
-
-Tiquete tiquete = new Tiquete(
-    pasajero,
-    "PNR123456",               // códigoPNR
-    "AV650",                   // númeroVuelo
-    "SJO",                     // aeropuertoOrigen
-    "LIM",                     // aeropuertoDestino
-    "2025-10-15T08:30",        // fechaHoraSalida
-    "2025-10-15T12:45",        // fechaHoraLlegada
-    "12A",                     // númeroAsiento
-    "G5",                      // puertaEmbarque (puede ser null)
-    "AV"                       // códigoAerolinea
-);
-        System.out.println(tiquete);
-        
-    }
+    
     
     
 }
