@@ -113,7 +113,7 @@ public class Tiquete {
                 ", numeroAsiento=" + numeroAsiento + ", puertaEmbarque=" + puertaEmbarque + ", codigoAerolinea=" + codigoAerolinea + '}';
     }
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         
       
 Pasajero pasajero = new Pasajero("felix","hernandez","rose","Costaricense",700000000,"15/11/2003");
@@ -136,4 +136,6 @@ Tiquete tiquete = new Tiquete(
     }
     
     
+}
+*/
 }

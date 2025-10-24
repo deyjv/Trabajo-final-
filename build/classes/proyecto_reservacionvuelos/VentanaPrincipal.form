@@ -105,15 +105,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnReservar" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnPasajeros" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnVuelos" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSalir" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReservar" pref="152" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnPasajeros" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="btnVuelos" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="btnSalir" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
