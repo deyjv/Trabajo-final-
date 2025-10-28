@@ -10,4 +10,5 @@ package proyecto.vista;
  */
 public class hols {
     
+    //string 
 }
