@@ -5,6 +5,7 @@
 package proyecto_reservacionvuelos;
 
 import javax.swing.JOptionPane;
+import proyecto_reservacionvuelos.VentanaReservarVuelo;
 
 /**
  *
@@ -221,8 +222,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
         // TODO add your handling code here:                                          
-        JOptionPane.showMessageDialog(this, "Abrir ventana de Reservar Vuelo");
-
+       
+        VentanaReservarVuelo  vRV= new VentanaReservarVuelo();
+        vRV.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnReservarActionPerformed
 
