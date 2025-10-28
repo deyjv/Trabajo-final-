@@ -97,6 +97,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnPasajeros.setBorder(null);
         btnPasajeros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPasajeros.setFocusPainted(false);
+        btnPasajeros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPasajerosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPasajerosMouseExited(evt);
+            }
+        });
         btnPasajeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPasajerosActionPerformed(evt);
@@ -109,6 +117,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnVuelos.setBorder(null);
         btnVuelos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVuelos.setFocusPainted(false);
+        btnVuelos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnVuelosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnVuelosMouseExited(evt);
+            }
+        });
         btnVuelos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVuelosActionPerformed(evt);
@@ -121,6 +137,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnSalir.setBorder(null);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.setFocusPainted(false);
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSalirMouseExited(evt);
+            }
+        });
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -223,13 +247,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnReservarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReservarMouseEntered
         // TODO add your handling code here:
-        btnReservar.setBackground(new java.awt.Color(0, 102, 204)); // azul cuando pasa el mouse
+        btnReservar.setBackground(new java.awt.Color(0, 102, 204)); // Se vuelve azul cuando pasa el mouse
     }//GEN-LAST:event_btnReservarMouseEntered
 
     private void btnReservarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReservarMouseExited
         // TODO add your handling code here:
-         btnReservar.setBackground(new java.awt.Color(70, 70, 70)); // vuelve a gris
+        btnReservar.setBackground(new java.awt.Color(70, 70, 70)); // al igual que el otro pero se pone gris
     }//GEN-LAST:event_btnReservarMouseExited
+
+    private void btnPasajerosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPasajerosMouseEntered
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(0, 102, 204)); // Se vuelve azul cuando pasa el mouse
+
+    }//GEN-LAST:event_btnPasajerosMouseEntered
+
+    private void btnPasajerosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPasajerosMouseExited
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(70, 70, 70)); // al igual que el otro pero se pone gris
+
+    }//GEN-LAST:event_btnPasajerosMouseExited
+
+    private void btnVuelosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVuelosMouseEntered
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(0, 102, 204)); // Se vuelve azul cuando pasa el mouse
+
+    }//GEN-LAST:event_btnVuelosMouseEntered
+
+    private void btnVuelosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVuelosMouseExited
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(70, 70, 70)); // al igual que el otro pero se pone gris
+
+    }//GEN-LAST:event_btnVuelosMouseExited
+
+    private void btnSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseEntered
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(0, 102, 204)); // Se vuelve azul cuando pasa el mouse
+
+
+    }//GEN-LAST:event_btnSalirMouseEntered
+
+    private void btnSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseExited
+        // TODO add your handling code here:
+        btnReservar.setBackground(new java.awt.Color(70, 70, 70)); // al igual que el otro pero se pone gris
+
+    }//GEN-LAST:event_btnSalirMouseExited
 
     /**
      * @param args the command line arguments
