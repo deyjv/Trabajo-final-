@@ -6,13 +6,14 @@ package proyecto_reservacionvuelos;
 
 import javax.swing.JOptionPane;
 import proyecto_reservacionvuelos.VentanaReservarVuelo;
+import proyecto.reservacion.Avion;
 
 /**
  *
  * @author oliva
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+public Avion av1;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
 
     /**
@@ -24,6 +25,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setTitle("Sistema de Reservación de Vuelos");
         this.setLocationRelativeTo(null); // Centrar ventana
         this.setResizable(false); // No permitir cambiar tamaño
+        
+        av1=new  Avion("Boeing 747",2,2);
+       
     }
 
     /**

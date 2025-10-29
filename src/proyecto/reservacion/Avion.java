@@ -40,4 +40,46 @@ public class Avion {
     public String getModelo() {
         return modelo;
     }
+
+    public int getDisponiblesEjecutiva() {
+        return disponiblesEjecutiva;
+    }
+
+    public void setDisponiblesEjecutiva(int disponiblesEjecutiva) {
+        this.disponiblesEjecutiva = disponiblesEjecutiva;
+    }
+
+    public int getDisponiblesEconomica() {
+        return disponiblesEconomica;
+    }
+
+    public void setDisponiblesEconomica(int disponiblesEconomica) {
+        this.disponiblesEconomica = disponiblesEconomica;
+    }
+
+    public int getCapacidadEjecutiva() {
+        return capacidadEjecutiva;
+    }
+
+    public void setCapacidadEjecutiva(int capacidadEjecutiva) {
+        this.capacidadEjecutiva = capacidadEjecutiva;
+    }
+
+    public int getCapacidadEconomica() {
+        return capacidadEconomica;
+    }
+
+    public void setCapacidadEconomica(int capacidadEconomica) {
+        this.capacidadEconomica = capacidadEconomica;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Avion{" + "modelo=" + modelo + ", capacidadEjecutiva=" + capacidadEjecutiva + ", capacidadEconomica=" + capacidadEconomica + ", disponiblesEjecutiva=" + disponiblesEjecutiva + ", disponiblesEconomica=" + disponiblesEconomica + '}';
+    }
+    
+    
+    
 }

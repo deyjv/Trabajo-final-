@@ -10,17 +10,28 @@ package proyecto.reservacion;
  */
 public class Factura {
     private String idFactura;
-    private Reservacion reservacion;
+    private Reservar reservacion;
     private double totalImpuestos;
-     private double precioTiquete;
     private double montoTotal;
+    
+    
 
-    public Factura(String idFactura, Reservacion reservacion, double totalImpuestos, double precioTiquete) {
+        
+     public Factura() {
+      
+    }
+    public Factura(String idFactura) {
+        this.idFactura = idFactura;
+   
+    }
+    
+    public Factura(String idFactura, Reservar reservacion, double totalImpuestos, double precioTiquete) {
         this.idFactura = idFactura;
         this.reservacion = reservacion;
         this.totalImpuestos = totalImpuestos;
-        this.precioTiquete = precioTiquete;
+   
     }
+
 
     public String getIdFactura() {
         return idFactura;
@@ -30,11 +41,11 @@ public class Factura {
         this.idFactura = idFactura;
     }
 
-    public Reservacion getReservacion() {
+    public Reservar getReservacion() {
         return reservacion;
     }
 
-    public void setReservacion(Reservacion reservacion) {
+    public void setReservacion(Reservar reservacion) {
         this.reservacion = reservacion;
     }
 
@@ -47,16 +58,10 @@ public class Factura {
         this.totalImpuestos = totalImpuestos;
     }
 
-    public double getPrecioTiquete() {
-        return precioTiquete;
-    }
-
-    public void setPrecioTiquete(double precioTiquete) {
-        this.precioTiquete = precioTiquete;
-    }
+  
 
     public double getMontoTotal() {
-        montoTotal+=this.getPrecioTiquete()+this.getTotalImpuestos();
+        montoTotal+=this.getTotalImpuestos();
         return montoTotal;
     }
 
@@ -67,11 +72,14 @@ public class Factura {
                 "\n Fecha de reservacion=" + reservacion.getFechaReserva() +
                 "\n Clase=" + reservacion.getClaseAsignada()+
                 "\n totalImpuestos=" + totalImpuestos +
-                "\n precioTiquete=" + precioTiquete +
+           
                 "\n montoTotal=" + getMontoTotal() ;
         
         return salida;
     }
+
+    
+    
 
   
 

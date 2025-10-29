@@ -37,6 +37,23 @@ public class Vuelo {
         return destino;
     }
 
+    public double getPrecioEjecutiva() {
+        return precioEjecutiva;
+    }
+
+    public void setPrecioEjecutiva(double precioEjecutiva) {
+        this.precioEjecutiva = precioEjecutiva;
+    }
+
+    public double getPrecioEconomica() {
+        return precioEconomica;
+    }
+
+    public void setPrecioEconomica(double precioEconomica) {
+        this.precioEconomica = precioEconomica;
+    }
+    
+
     public double getPrecio(String clase) {
         if (clase.equalsIgnoreCase("Ejecutiva"))
             return precioEjecutiva;
@@ -46,6 +63,11 @@ public class Vuelo {
 
     public Avion getAvion() {
         return avion;
+    }
+
+    @Override
+    public String toString() {
+        return "Vuelo{" + "codigo=" + codigo + ", origen=" + origen + ", destino=" + destino + ", precioEjecutiva=" + precioEjecutiva + ", precioEconomica=" + precioEconomica + ", avion=" + avion + '}';
     }
     
 }
