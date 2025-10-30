@@ -11,7 +11,7 @@ import proyecto.reservacion.Avion;
  * @author Jivannia
  */
 public class ListaAvion {
-      private Avion[] aviones = new Avion[99999999];
+      private Avion[] aviones = new Avion[999];
         int apuntador;
 
     public ListaAvion() {
@@ -26,6 +26,15 @@ public class ListaAvion {
         aviones[apuntador]=avion;
         apuntador++;
     }
+
+    public Avion[] getAviones() {
+        return aviones;
+    }
+
+    public int getApuntador() {
+        return apuntador;
+    }
+            
       
       public String imprimirLista() {
             String salida= " Lista de Aviones \n";

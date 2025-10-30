@@ -21,6 +21,11 @@ public class ListaFactura {
         facturas[apuntador]=factura;
         apuntador++;
     }
+
+    public Factura[] getFacturas() {
+        return facturas;
+    }
+     
             
             
             

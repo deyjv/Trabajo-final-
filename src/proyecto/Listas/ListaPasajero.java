@@ -27,6 +27,11 @@ public class ListaPasajero {
         pasajeros[apuntador]=pasajero;
         apuntador++;
     }
+
+    public Pasajero[] getPasajeros() {
+        return pasajeros;
+    }
+            
       
       public String imprimirLista() {
             String salida= " Lista de Pasajeros \n";

@@ -21,6 +21,15 @@ public class ListaReservar {
         reservaciones[apuntador]=reservar;
         apuntador++;
     }
+
+    public Reservar[] getReservaciones() {
+        return reservaciones;
+    }
+
+    public void setReservaciones(Reservar[] reservaciones) {
+        this.reservaciones = reservaciones;
+    }
+            
       
       public String imprimirLista() {
             String salida= " Lista de Vuelos \n";

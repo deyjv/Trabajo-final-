@@ -27,6 +27,11 @@ public class ListaTiquete {
         tiquetes[apuntador]=tiquete;
         apuntador++;
     }
+
+    public Tiquete[] getTiquetes() {
+        return tiquetes;
+    }
+            
       
       public String imprimirLista() {
             String salida= " Lista de Tiquetes \n";
