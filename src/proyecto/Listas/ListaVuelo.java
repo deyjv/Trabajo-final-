@@ -12,7 +12,7 @@ import proyecto.reservacion.Vuelo;
  */
 public class ListaVuelo {
       private Vuelo[] vuelos = new Vuelo[99999999];
-        int apuntador;
+       private int apuntador;
 
     public ListaVuelo() {
      }
@@ -21,6 +21,15 @@ public class ListaVuelo {
         vuelos[apuntador]=vuelo;
         apuntador++;
     }
+        
+          
+
+    public Vuelo[] getVuelos() {
+        return vuelos;
+    }
+
+         
+            
       
       public String imprimirLista() {
             String salida= " Lista de Vuelos \n";

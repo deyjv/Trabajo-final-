@@ -14,16 +14,16 @@ public class Reservar {
     private String fechaReserva;
     private String estado;
      private Pasajero pasajero;
-     private Avion avion;
+     private Vuelo vuelo;
      private Tiquete tiquete;
 
-    public Reservar(String idReservacion, String claseAsignada, String fechaReserva, String estado, Pasajero pasajero, Avion avion, Tiquete tiquete) {
+    public Reservar(String idReservacion, String claseAsignada, String fechaReserva, String estado, Pasajero pasajero, Vuelo vuelo, Tiquete tiquete) {
         this.idReservacion = idReservacion;
         this.claseAsignada = claseAsignada;
         this.fechaReserva = fechaReserva;
         this.estado = estado;
         this.pasajero = pasajero;
-        this.avion = avion;
+        this.vuelo = vuelo;
         this.tiquete = tiquete;
     }
 
@@ -67,12 +67,12 @@ public class Reservar {
         this.pasajero = pasajero;
     }
 
-    public Avion getAvion() {
-        return avion;
+    public Vuelo getVuelo() {
+        return vuelo;
     }
 
-    public void setAvion(Avion avion) {
-        this.avion = avion;
+    public void setAvion(Vuelo vuelo) {
+        this.vuelo = vuelo;
     }
 
     public Tiquete getTiquete() {
@@ -92,7 +92,7 @@ public class Reservar {
                 
                 ", Nombre del Pasajero= "+ pasajero.getNombre()+" "
                 + pasajero.apellido1+" "+ pasajero.apellido2+" "
-               + ", Modelo de avion=" + avion.getModelo() +
+               + ", Vuelo=" + vuelo.getDestino() +
                 ", Vuelo Destino a=" + tiquete.getAeropuertoDestino() + '}';
     }
      

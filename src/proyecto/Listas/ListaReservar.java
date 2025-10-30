@@ -32,7 +32,7 @@ public class ListaReservar {
                 
                 ", Nombre del Pasajero= "+reservaciones[i].getPasajero().getNombre()+" "
                 + reservaciones[i].getPasajero().getApellido1()+" "+ reservaciones[i].getPasajero().getApellido2()+" "
-               + ", Modelo de avion=" +reservaciones[i].getAvion().getModelo() +
+               + ", Modelo de avion=" +reservaciones[i].getVuelo().getCodigo() +
                 ", Vuelo Destino a=" + reservaciones[i].getTiquete().getAeropuertoDestino() + '}'+"\n";
 
                  }
