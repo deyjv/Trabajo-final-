@@ -26,6 +26,13 @@ public class Reservar {
         this.vuelo = vuelo;
         this.tiquete = tiquete;
     }
+    
+     public Reservar(String idReservacion, Pasajero pasajero, Vuelo vuelo, Tiquete tiquete) {
+        this.idReservacion = idReservacion;
+        this.pasajero = pasajero;
+        this.vuelo = vuelo;
+        this.tiquete = tiquete;
+    }
 
     public String getIdReservacion() {
         return idReservacion;

@@ -21,6 +21,10 @@ public class ListaVuelo {
         vuelos[apuntador]=vuelo;
         apuntador++;
     }
+
+    public int getApuntador() {
+        return apuntador;
+    }
         
           
 

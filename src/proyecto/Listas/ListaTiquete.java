@@ -31,12 +31,16 @@ public class ListaTiquete {
     public Tiquete[] getTiquetes() {
         return tiquetes;
     }
+
+    public int getApuntador() {
+        return apuntador;
+    }
             
-      
+     
       public String imprimirLista() {
             String salida= " Lista de Tiquetes \n";
             for(int i=0;i<apuntador;i++){
-                salida += "Tiquete{ codigoPNR=" + tiquetes[i].getCodigoPNR() + ", numeroVuelo=" + tiquetes[i].getNumeroVuelo() + ", aeropuertoOrigen=" + tiquetes[i].getAeropuertoOrigen() +
+                salida += "Tiquete{ Pasajero Nombre"+tiquetes[i].getPasa().getNombre()+" codigoPNR=" + tiquetes[i].getCodigoPNR() + ", numeroVuelo=" + tiquetes[i].getNumeroVuelo() + ", aeropuertoOrigen=" + tiquetes[i].getAeropuertoOrigen() +
                 ", aeropuertoDestino=" + tiquetes[i].getAeropuertoDestino() + ", fechaHoraSalida=" + tiquetes[i].getFechaHoraSalida() + ", fechaHoraLlegada=" + tiquetes[i].getFechaHoraLlegada() +
                 ", numeroAsiento=" + tiquetes[i].getNumeroAsiento() + ", puertaEmbarque=" + tiquetes[i].getPuertaEmbarque() + ", codigoAerolinea=" + tiquetes[i].getCodigoAerolinea() + '}'+"\n";
     

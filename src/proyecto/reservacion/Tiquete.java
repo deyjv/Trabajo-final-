@@ -33,6 +33,22 @@ public class Tiquete {
         this.puertaEmbarque = puertaEmbarque;
         this.codigoAerolinea = codigoAerolinea;
     }
+    
+        public Tiquete(Pasajero pasa, String codigoPNR,String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
+        this.pasa = pasa;
+        this.codigoPNR = codigoPNR;
+        this.numeroAsiento = numeroAsiento;
+        this.puertaEmbarque = puertaEmbarque;
+        this.codigoAerolinea = codigoAerolinea;
+    }
+
+    public Pasajero getPasa() {
+        return pasa;
+    }
+
+    public void setPasa(Pasajero pasa) {
+        this.pasa = pasa;
+    }
 
     public String getCodigoPNR() {
         return codigoPNR;

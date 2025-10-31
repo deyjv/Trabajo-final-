@@ -28,6 +28,10 @@ public class ListaPasajero {
         apuntador++;
     }
 
+    public int getApuntador() {
+        return apuntador;
+    }
+
     public Pasajero[] getPasajeros() {
         return pasajeros;
     }

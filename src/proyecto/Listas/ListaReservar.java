@@ -17,9 +17,13 @@ public class ListaReservar {
     public ListaReservar() {
      }
         
-            public void agregarVueloALista(Reservar reservar){
+            public void agregarReservaALista(Reservar reservar){
         reservaciones[apuntador]=reservar;
         apuntador++;
+    }
+
+    public int getApuntador() {
+        return apuntador;
     }
 
     public Reservar[] getReservaciones() {
