@@ -4,6 +4,7 @@
  */
 package proyecto.Listas;
 
+import java.util.ArrayList;
 import proyecto.reservacion.Factura;
 
 /**
@@ -11,31 +12,30 @@ import proyecto.reservacion.Factura;
  * @author Jivannia
  */
 public class ListaFactura {
- private Factura[] facturas = new Factura[99999999];
+ private ArrayList<Factura> facturas=new ArrayList<>();
  int apuntador;
     public ListaFactura() {
         
     }
 
      public void agregarFacturaALista(Factura factura){
-        facturas[apuntador]=factura;
-        apuntador++;
+        facturas.add(factura);
+        apuntador=facturas.size();
     }
 
     public Factura[] getFacturas() {
-        return facturas;
+        return facturas.toArray(new Factura[0]);
     }
      
             
             
             
       public String imprimirLista() {
-            String salida= " Factura \n";
+            StringBuilder salida= new StringBuilder();
             for(int i=0;i<apuntador;i++){
-                salida +=" idFactura=" +facturas[i].getIdFactura() +
-                         
-                        "\n\n";
+                Factura f= facturas.get(i);
+                salida.append(f.toString()).append("\n\n");
                  }
-            return salida;
+            return salida.toString();
     }
 }

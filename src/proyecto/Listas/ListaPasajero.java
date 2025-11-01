@@ -4,7 +4,7 @@
  */
 package proyecto.Listas;
 
-
+import java.util.ArrayList;
 import proyecto.reservacion.Pasajero;
 
 /**
@@ -12,7 +12,7 @@ import proyecto.reservacion.Pasajero;
  * @author Jivannia
  */
 public class ListaPasajero {
-      private Pasajero[] pasajeros = new Pasajero[99999999];
+      private ArrayList<Pasajero> pasajeros=new ArrayList<>();
         int apuntador;
 
     public ListaPasajero() {
@@ -24,23 +24,24 @@ public class ListaPasajero {
         
         
             public void agregarPasajeroALista(Pasajero pasajero){
-        pasajeros[apuntador]=pasajero;
+        pasajeros.add(pasajero);
         apuntador++;
     }
 
     public int getApuntador() {
-        return apuntador;
+        return pasajeros.size();
     }
 
     public Pasajero[] getPasajeros() {
-        return pasajeros;
+        return pasajeros.toArray(new Pasajero[0]);
     }
             
       
       public String imprimirLista() {
             String salida= " Lista de Pasajeros \n";
             for(int i=0;i<apuntador;i++){
-                salida += "Pasajero " + "nombre= " + pasajeros[i].getNombre() + " apellido1= " + pasajeros[i].getApellido1() + " apellido2= " +  pasajeros[i].getApellido2() + " nacionalidad= " + pasajeros[i].getNacionalidad() + " cedula= " + pasajeros[i].getCedula() + " fechaNacimiento= " + pasajeros[i].getFechaNacimiento()+"\n" ;
+                Pasajero p = pasajeros.get(i);
+                salida += "Pasajero " + "nombre= " + p.getNombre() + " apellido1= " + p.getApellido1() + " apellido2= " +  p.getApellido2() + " nacionalidad= " + p.getNacionalidad() + " cedula= " + p.getCedula() + " fechaNacimiento= " + p.getFechaNacimiento()+"\n" ;
                  }
             return salida;
     }

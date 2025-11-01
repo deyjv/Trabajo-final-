@@ -4,6 +4,7 @@
  */
 package proyecto.Listas;
 
+import java.util.ArrayList;
 import proyecto.reservacion.Avion;
 
 /**
@@ -11,7 +12,7 @@ import proyecto.reservacion.Avion;
  * @author Jivannia
  */
 public class ListaAvion {
-      private Avion[] aviones = new Avion[999];
+      private ArrayList<Avion> aviones = new ArrayList<>();
         int apuntador;
 
     public ListaAvion() {
@@ -23,23 +24,24 @@ public class ListaAvion {
         
         
             public void agregarAvionALista(Avion avion){
-        aviones[apuntador]=avion;
-        apuntador++;
+        aviones.add(avion);
+        apuntador=aviones.size();
     }
 
     public Avion[] getAviones() {
-        return aviones;
+        return aviones.toArray(new Avion[0]);
     }
 
     public int getApuntador() {
-        return apuntador;
+        return aviones.size();
     }
             
       
       public String imprimirLista() {
             String salida= " Lista de Aviones \n";
             for(int i=0;i<apuntador;i++){
-                salida += "Avion{" + "modelo=" + aviones[i].getModelo() + ", capacidadEjecutiva=" + aviones[i].getCapacidadEjecutiva() + ", capacidadEconomica=" +  aviones[i].getCapacidadEconomica()+ ", disponiblesEjecutiva=" + aviones[i].getDisponiblesEjecutiva() + ", disponiblesEconomica=" + aviones[i].getDisponiblesEconomica() + '}'+"\n";
+                Avion a=aviones.get(i);
+                salida += "Avion{" + "modelo=" + a.getModelo() + ", capacidadEjecutiva=" + a.getCapacidadEjecutiva() + ", capacidadEconomica=" +  a.getCapacidadEconomica()+ ", disponiblesEjecutiva=" + a.getDisponiblesEjecutiva() + ", disponiblesEconomica=" + a.getDisponiblesEconomica() + '}'+"\n";
                  }
             return salida;
     }

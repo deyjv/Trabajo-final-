@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyecto.Listas;
-
+import java.util.ArrayList;
 import proyecto.reservacion.Vuelo;
 
 /**
@@ -11,25 +11,25 @@ import proyecto.reservacion.Vuelo;
  * @author Jivannia
  */
 public class ListaVuelo {
-      private Vuelo[] vuelos = new Vuelo[99999999];
+      private ArrayList<Vuelo> vuelos =new ArrayList<>();
        private int apuntador;
 
     public ListaVuelo() {
      }
         
             public void agregarVueloALista(Vuelo vuelo){
-        vuelos[apuntador]=vuelo;
-        apuntador++;
+        vuelos.add(vuelo);
+        apuntador=vuelos.size();
     }
 
     public int getApuntador() {
-        return apuntador;
+        return vuelos.size();
     }
         
           
 
     public Vuelo[] getVuelos() {
-        return vuelos;
+        return vuelos.toArray(new Vuelo[0]);
     }
 
          
@@ -38,7 +38,8 @@ public class ListaVuelo {
       public String imprimirLista() {
             String salida= " Lista de Vuelos \n";
             for(int i=0;i<apuntador;i++){
-                salida +="Vuelo{" + "codigo=" + vuelos[i].getCodigo()+ ", origen=" + vuelos[i].getOrigen() + ", destino=" + vuelos[i].getDestino() + ", precioEjecutiva=" + vuelos[i].getPrecioEjecutiva() + ", precioEconomica=" + vuelos[i].getPrecioEjecutiva() + ", Modelo avion=" + vuelos[i].getAvion().getModelo() + '}'+"\n";
+                Vuelo v = vuelos.get(i);
+                salida +="Vuelo{" + "codigo=" + v.getCodigo()+ ", origen=" + v.getOrigen() + ", destino=" + v.getDestino() + ", precioEjecutiva=" + v.getPrecioEjecutiva() + ", precioEconomica=" + v.getPrecioEjecutiva() + ", Modelo avion=" + v.getAvion().getModelo() + '}'+"\n";
 
                  }
             return salida;

@@ -4,7 +4,7 @@
  */
 package proyecto.Listas;
 
-
+import java.util.ArrayList;
 import proyecto.reservacion.Tiquete;
 
 /**
@@ -12,7 +12,7 @@ import proyecto.reservacion.Tiquete;
  * @author Jivannia
  */
 public class ListaTiquete {
-      private Tiquete[] tiquetes = new Tiquete[99999999];
+      private ArrayList<Tiquete> tiquetes = new ArrayList<>();
         int apuntador;
 
     public ListaTiquete() {
@@ -24,25 +24,26 @@ public class ListaTiquete {
         
         
             public void agregarTiqueteALista(Tiquete tiquete){
-        tiquetes[apuntador]=tiquete;
-        apuntador++;
+        tiquetes.add(tiquete);
+        apuntador=tiquetes.size();
     }
 
     public Tiquete[] getTiquetes() {
-        return tiquetes;
+        return tiquetes.toArray(new Tiquete[0]);
     }
 
     public int getApuntador() {
-        return apuntador;
+        return tiquetes.size();
     }
             
      
       public String imprimirLista() {
             String salida= " Lista de Tiquetes \n";
             for(int i=0;i<apuntador;i++){
-                salida += "Tiquete{ Pasajero Nombre"+tiquetes[i].getPasa().getNombre()+" codigoPNR=" + tiquetes[i].getCodigoPNR() + ", numeroVuelo=" + tiquetes[i].getNumeroVuelo() + ", aeropuertoOrigen=" + tiquetes[i].getAeropuertoOrigen() +
-                ", aeropuertoDestino=" + tiquetes[i].getAeropuertoDestino() + ", fechaHoraSalida=" + tiquetes[i].getFechaHoraSalida() + ", fechaHoraLlegada=" + tiquetes[i].getFechaHoraLlegada() +
-                ", numeroAsiento=" + tiquetes[i].getNumeroAsiento() + ", puertaEmbarque=" + tiquetes[i].getPuertaEmbarque() + ", codigoAerolinea=" + tiquetes[i].getCodigoAerolinea() + '}'+"\n";
+                Tiquete t = tiquetes.get(i);
+                salida += "Tiquete{ Pasajero Nombre"+t.getPasa().getNombre()+" codigoPNR=" + t.getCodigoPNR() + ", numeroVuelo=" + t.getNumeroVuelo() + ", aeropuertoOrigen=" + t.getAeropuertoOrigen() +
+                ", aeropuertoDestino=" + t.getAeropuertoDestino() + ", fechaHoraSalida=" + t.getFechaHoraSalida() + ", fechaHoraLlegada=" + t.getFechaHoraLlegada() +
+                ", numeroAsiento=" + t.getNumeroAsiento() + ", puertaEmbarque=" + t.getPuertaEmbarque() + ", codigoAerolinea=" + t.getCodigoAerolinea() + '}'+"\n";
     
                  }
             return salida;

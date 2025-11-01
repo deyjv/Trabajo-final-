@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyecto.Listas;
-
+import java.util.ArrayList;
 import proyecto.reservacion.Reservar;
 
 /**
@@ -11,42 +11,47 @@ import proyecto.reservacion.Reservar;
  * @author Jivannia
  */
 public class ListaReservar {
-      private Reservar[] reservaciones = new Reservar[99999999];
+      private ArrayList<Reservar> reservaciones = new ArrayList<>();
         int apuntador;
 
     public ListaReservar() {
      }
         
             public void agregarReservaALista(Reservar reservar){
-        reservaciones[apuntador]=reservar;
-        apuntador++;
+        reservaciones.add(reservar);
+        apuntador=reservaciones.size();
     }
 
     public int getApuntador() {
-        return apuntador;
+        return reservaciones.size();
     }
 
     public Reservar[] getReservaciones() {
-        return reservaciones;
+        return reservaciones.toArray(new Reservar[0]);
     }
 
     public void setReservaciones(Reservar[] reservaciones) {
-        this.reservaciones = reservaciones;
+        this.reservaciones = new ArrayList<>();
+        for(Reservar r: reservaciones){
+            if(r !=null) this.reservaciones.add(r);
+        }
+        apuntador=this.reservaciones.size();
     }
             
       
       public String imprimirLista() {
             String salida= " Lista de Vuelos \n";
             for(int i=0;i<apuntador;i++){
-                salida +="Reservacion{" + "idReservacion=" +  reservaciones[i].getIdReservacion() + 
-                ", claseAsignada=" + reservaciones[i].getClaseAsignada() + 
-                ", fechaReserva=" + reservaciones[i].getFechaReserva() + 
-                ", estado=" + reservaciones[i].getEstado() + 
+                Reservar r = reservaciones.get(i); 
+                salida +="Reservacion{" + "idReservacion=" +  r.getIdReservacion() + 
+                ", claseAsignada=" + r.getClaseAsignada() + 
+                ", fechaReserva=" + r.getFechaReserva() + 
+                ", estado=" + r.getEstado() + 
                 
-                ", Nombre del Pasajero= "+reservaciones[i].getPasajero().getNombre()+" "
-                + reservaciones[i].getPasajero().getApellido1()+" "+ reservaciones[i].getPasajero().getApellido2()+" "
-               + ", Modelo de avion=" +reservaciones[i].getVuelo().getCodigo() +
-                ", Vuelo Destino a=" + reservaciones[i].getTiquete().getAeropuertoDestino() + '}'+"\n";
+                ", Nombre del Pasajero= "+r.getPasajero().getNombre()+" "
+                + r.getPasajero().getApellido1()+" "+ r.getPasajero().getApellido2()+" "
+               + ", Modelo de avion=" +r.getVuelo().getCodigo() +
+                ", Vuelo Destino a=" + r.getTiquete().getAeropuertoDestino() + '}'+"\n";
 
                  }
             return salida;
