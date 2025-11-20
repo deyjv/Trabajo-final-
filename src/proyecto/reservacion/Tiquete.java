@@ -11,7 +11,7 @@ public class Tiquete {
     private String codigoPNR;
     private String numeroVuelo;
     private String aeropuertoOrigen;
-    private String aeropuertoDestino;
+ 
     private String fechaHoraSalida;
     private String fechaHoraLlegada;
     private String numeroAsiento;
@@ -21,14 +21,14 @@ public class Tiquete {
     public Tiquete() {
     }
 
-    public Tiquete(Pasajero pasa, String codigoPNR, String numeroVuelo, String aeropuertoOrigen, String aeropuertoDestino, String fechaHoraSalida, String fechaHoraLlegada, String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
+    public Tiquete(Pasajero pasa, String codigoPNR, String numeroVuelo, String aeropuertoOrigen, String aeropuertoDestino, String fechaHoraSalida, String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
         this.pasa = pasa;
         this.codigoPNR = codigoPNR;
         this.numeroVuelo = numeroVuelo;
         this.aeropuertoOrigen = aeropuertoOrigen;
-        this.aeropuertoDestino = aeropuertoDestino;
+ 
         this.fechaHoraSalida = fechaHoraSalida;
-        this.fechaHoraLlegada = fechaHoraLlegada;
+
         this.numeroAsiento = numeroAsiento;
         this.puertaEmbarque = puertaEmbarque;
         this.codigoAerolinea = codigoAerolinea;
@@ -37,6 +37,15 @@ public class Tiquete {
         public Tiquete(Pasajero pasa, String codigoPNR,String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
         this.pasa = pasa;
         this.codigoPNR = codigoPNR;
+        this.numeroAsiento = numeroAsiento;
+        this.puertaEmbarque = puertaEmbarque;
+        this.codigoAerolinea = codigoAerolinea;
+    }
+
+    public Tiquete(Pasajero pasa, String codigoPNR,String numeroAsiento, String puertaEmbarque, String codigoAerolinea,String fechaHoraSalida){
+        this.pasa = pasa;
+        this.codigoPNR = codigoPNR;
+        this.fechaHoraSalida = fechaHoraSalida;
         this.numeroAsiento = numeroAsiento;
         this.puertaEmbarque = puertaEmbarque;
         this.codigoAerolinea = codigoAerolinea;
@@ -74,14 +83,7 @@ public class Tiquete {
         this.aeropuertoOrigen = aeropuertoOrigen;
     }
 
-    public String getAeropuertoDestino() {
-        return aeropuertoDestino;
-    }
-
-    public void setAeropuertoDestino(String aeropuertoDestino) {
-        this.aeropuertoDestino = aeropuertoDestino;
-    }
-
+  
     public String getFechaHoraSalida() {
         return fechaHoraSalida;
     }
@@ -124,9 +126,9 @@ public class Tiquete {
 
     @Override
     public String toString() {
-        return "Tiquete{" + "pasa=" + pasa + ", codigoPNR=" + codigoPNR + ", numeroVuelo=" + numeroVuelo + ", aeropuertoOrigen=" + aeropuertoOrigen +
-                ", aeropuertoDestino=" + aeropuertoDestino + ", fechaHoraSalida=" + fechaHoraSalida + ", fechaHoraLlegada=" + fechaHoraLlegada +
-                ", numeroAsiento=" + numeroAsiento + ", puertaEmbarque=" + puertaEmbarque + ", codigoAerolinea=" + codigoAerolinea + '}';
+        return "Tiquete{\n Pasajero=" + pasa + ", \n codigoPNR=" + codigoPNR + "\n, numeroVuelo=" + numeroVuelo + "\n, Aeropuerto Origen-Destino=" + aeropuertoOrigen +
+                 "\n, fechaHoraSalida=" + fechaHoraSalida + 
+                "\n, numeroAsiento=" + numeroAsiento + "\n, puertaEmbarque=" + puertaEmbarque + "\n, codigoAerolinea=" + codigoAerolinea + '}';
     }
     
     /*public static void main(String[] args) {

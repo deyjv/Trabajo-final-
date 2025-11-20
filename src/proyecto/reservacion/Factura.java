@@ -13,6 +13,8 @@ public class Factura {
     private Reservar reservacion;
     private double totalImpuestos;
     private double montoTotal;
+    private String fechaFactura;
+    private String clase;
     
     
 
@@ -25,10 +27,13 @@ public class Factura {
    
     }
     
-    public Factura(String idFactura, Reservar reservacion, double totalImpuestos, double precioTiquete) {
+    public Factura(String idFactura, Reservar reservacion, double totalImpuestos, double precioTiquete,String fechafactura,String clase) {
         this.idFactura = idFactura;
         this.reservacion = reservacion;
         this.totalImpuestos = totalImpuestos;
+        this.clase=clase;
+        this.fechaFactura=fechafactura;
+        
    
     }
 
@@ -65,13 +70,31 @@ public class Factura {
         return montoTotal;
     }
 
+    public String getFechaFactura() {
+        return fechaFactura;
+    }
+
+    public void setFechaFactura(String fechaFactura) {
+        this.fechaFactura = fechaFactura;
+    }
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+    
+
     @Override
     public String toString() {
         String salida= " Factura \n";
        salida +=" idFactura=" + idFactura +
-                "\n Fecha de reservacion=" + reservacion.getFechaReserva() +
-                "\n Clase=" + reservacion.getClaseAsignada()+
+                "\n Fecha de reservacion=" + reservacion +
+                "\n Clase=" +clase +
                 "\n totalImpuestos=" + totalImpuestos +
+               "\n Fecha Factura=" + fechaFactura +
            
                 "\n montoTotal=" + getMontoTotal() ;
         

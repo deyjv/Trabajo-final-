@@ -5,6 +5,7 @@
 package proyecto.Listas;
 
 import java.util.ArrayList;
+import proyecto.reservacion.Factura;
 import proyecto.reservacion.Tiquete;
 
 /**
@@ -37,15 +38,13 @@ public class ListaTiquete {
     }
             
      
-      public String imprimirLista() {
-            String salida= " Lista de Tiquetes \n";
+       public String imprimirLista() {
+            StringBuilder salida= new StringBuilder();
             for(int i=0;i<apuntador;i++){
-                Tiquete t = tiquetes.get(i);
-                salida += "Tiquete{ Pasajero Nombre"+t.getPasa().getNombre()+" codigoPNR=" + t.getCodigoPNR() + ", numeroVuelo=" + t.getNumeroVuelo() + ", aeropuertoOrigen=" + t.getAeropuertoOrigen() +
-                ", aeropuertoDestino=" + t.getAeropuertoDestino() + ", fechaHoraSalida=" + t.getFechaHoraSalida() + ", fechaHoraLlegada=" + t.getFechaHoraLlegada() +
-                ", numeroAsiento=" + t.getNumeroAsiento() + ", puertaEmbarque=" + t.getPuertaEmbarque() + ", codigoAerolinea=" + t.getCodigoAerolinea() + '}'+"\n";
-    
+                Tiquete t= tiquetes.get(i);
+                salida.append(t.toString()).append("\n\n");
                  }
-            return salida;
+            return salida.toString();
+    
     }
 }

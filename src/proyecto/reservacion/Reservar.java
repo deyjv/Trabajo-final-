@@ -33,6 +33,15 @@ public class Reservar {
         this.vuelo = vuelo;
         this.tiquete = tiquete;
     }
+     
+        public Reservar(String idReservacion, Pasajero pasajero, Vuelo vuelo, Tiquete tiquete,String claseAsignada) {
+        this.idReservacion = idReservacion;
+        this.pasajero = pasajero;
+        this.vuelo = vuelo;
+        this.tiquete = tiquete;
+        this.claseAsignada=claseAsignada;
+    }
+        
 
     public String getIdReservacion() {
         return idReservacion;
@@ -100,7 +109,7 @@ public class Reservar {
                 ", Nombre del Pasajero= "+ pasajero.getNombre()+" "
                 + pasajero.apellido1+" "+ pasajero.apellido2+" "
                + ", Vuelo=" + vuelo.getDestino() +
-                ", Vuelo Destino a=" + tiquete.getAeropuertoDestino() + '}';
+                '}';
     }
      
 
