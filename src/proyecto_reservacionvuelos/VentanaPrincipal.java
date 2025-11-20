@@ -839,6 +839,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
    
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    
     private void comboBoxAvionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxAvionActionPerformed
        // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxAvionActionPerformed
