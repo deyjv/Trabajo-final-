@@ -825,7 +825,7 @@ String fechaFormateada = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
       JOptionPane.showMessageDialog(null,"Disponibilidad en Economica: "+listaAvion.getAviones()[comboBoXReservOrigenDestino.getSelectedIndex()].getDisponiblesEconomica()+"\n Disponibilidad en Ejecutiva: "+listaAvion.getAviones()[comboBoXReservOrigenDestino.getSelectedIndex()].getDisponiblesEjecutiva());
         System.out.println(comboBoXReservOrigenDestino.getSelectedItem().toString());
-   
+   //rolo
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void comboBoxAvionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxAvionActionPerformed

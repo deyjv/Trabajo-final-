@@ -13,7 +13,7 @@ import proyecto.reservacion.Reservar;
 public class ListaReservar {
       private ArrayList<Reservar> reservaciones = new ArrayList<>();
         int apuntador;
-
+//hola
     public ListaReservar() {
      }
         
