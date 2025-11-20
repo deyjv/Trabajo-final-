@@ -51,7 +51,7 @@ public class ListaReservar {
                 ", Nombre del Pasajero= "+r.getPasajero().getNombre()+" "
                 + r.getPasajero().getApellido1()+" "+ r.getPasajero().getApellido2()+" "
                + ", Modelo de avion=" +r.getVuelo().getCodigo() +
-                ", Vuelo Destino a=" + r.getTiquete().getAeropuertoDestino() + '}'+"\n";
+                + '}'+"\n";
 
                  }
             return salida;

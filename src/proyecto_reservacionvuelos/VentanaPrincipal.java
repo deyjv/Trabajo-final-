@@ -4,6 +4,11 @@
  */
 package proyecto_reservacionvuelos;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 import proyecto.Listas.ListaAvion;
@@ -35,7 +40,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      ListaTiquete listaTiquete;
      ListaFactura listaFactura;
      ListaReservar listaReservacion;
-     
+    
       private ButtonGroup group;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
 
@@ -57,6 +62,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      //lv.agregarVueloALista(new Vuelo("A1","Costa Rica","París",2000.0,1000.0,avion1));
                // lv.agregarVueloALista(new Vuelo("A2","Costa Rica","Colombia",600.0,300.0,avion2));
        group = new ButtonGroup();
+ 
+  
         group.add(this.rbtnEjecutiva);
        group.add(this.rbtnEconomica);
        
@@ -319,24 +326,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVueloCodigo))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVueloCodigo))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtVueloDestino)
-                                    .addComponent(txtVueloOrigen))))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel12)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVueloEjecutiva, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtVueloDestino)
+                            .addComponent(txtVueloOrigen)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVueloEjecutiva, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -692,7 +697,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -743,7 +747,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButton11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(32, Short.MAX_VALUE))))
+                        .addContainerGap(38, Short.MAX_VALUE))))
         );
 
         jTabbedPane2.addTab("Reservar Vuelo", jPanel5);
@@ -805,10 +809,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtReserva2ApellidoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+String fechaFormateada = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
 
 
 
-       listaFactura.agregarFacturaALista(new Factura("F#"+(int)Math.random()*10,listaReservacion.getReservaciones()[listaReservacion.getApuntador()-1],25000.0,listaVuelo.getVuelos()[listaVuelo.getApuntador()-1].getPrecio(seleccionarRadioBtn())));
+       listaFactura.agregarFacturaALista(new Factura("F#"+(int)Math.random()*10,listaReservacion.getReservaciones()[listaReservacion.getApuntador()-1],25000.0,listaVuelo.getVuelos()[listaVuelo.getApuntador()-1].getPrecio(seleccionarRadioBtn()),fechaFormateada,listaReservacion.getReservaciones()[listaReservacion.getApuntador()-1].getClaseAsignada()));
+        System.out.println(listaReservacion.getReservaciones()[listaReservacion.getApuntador()-1].getClaseAsignada());
                 txtAreaFactura.setText(listaFactura.imprimirLista());
                 
                 OcuparAsientoRadioBtn();
@@ -830,6 +836,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         // TODO add your handling code here:
         // TODO add your handling code here:
+         JOptionPane.showMessageDialog(null, "Avión Cargado");
         
         this.cargarAvionesEnComboBoxVuelo();
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -860,19 +867,22 @@ cargarVuelosEnComboBoxVuelo();        // TODO add your handling code here:
 
         listaPasajero.agregarPasajeroALista(new Pasajero(txtReservarNombre.getText(),txtReservar1Apellido.getText(),txtReserva2Apellido.getText(),txtReservaNacionalidad.getText(),Integer.parseInt(txtReservaCedula.getText()),txtReservaFechaNacimiento.getText()));
         System.out.println(listaPasajero.imprimirLista());
+         JOptionPane.showMessageDialog(null, "Pasajero Cargado");
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       System.out.println("listaPasajero.getApuntador()-1 = "+listaPasajero.getApuntador());
-  listaTiquete.agregarTiqueteALista(new Tiquete(listaPasajero.getPasajeros()[listaPasajero.getApuntador()-1],"PNR:"+Math.random(),"f"+listaAvion.getApuntador(),"U"+Math.random(),"ABC-"+Math.random()));
+    System.out.println("listaPasajero.getApuntador() = "+listaPasajero.getApuntador());
+//**U+Math es aeropuerto de origen
+String fechaFormateada = LocalDate.now().format(DateTimeFormatter.ISO_DATE);
+  listaTiquete.agregarTiqueteALista(new Tiquete(listaPasajero.getPasajeros()[listaPasajero.getApuntador()-1],"PNR:"+(int) (Math.random()*20),"f"+listaAvion.getApuntador(),listaVuelo.getVuelos()[comboBoXReservOrigenDestino.getSelectedIndex()].getOrigen()+"-"+listaVuelo.getVuelos()[comboBoXReservOrigenDestino.getSelectedIndex()].getDestino(),"",fechaFormateada,"ASI-"+(int)(Math.random()*50),"PMB-"+(int)(Math.random()*10),"COD# "+(int)(Math.random()*20)));
  txtAreaTiquete.setText(listaTiquete.imprimirLista());
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
        listaReservacion.agregarReservaALista(new Reservar("ID",listaPasajero.getPasajeros()[listaPasajero.getApuntador()-1],listaVuelo.getVuelos()[comboBoXReservOrigenDestino.getSelectedIndex()],listaTiquete.getTiquetes()[listaTiquete.getApuntador()-1]));
          //System.out.println(listaVuelo.getVuelos()[comboBoXReservOrigenDestino.getSelectedIndex()]);
-         
+         JOptionPane.showMessageDialog(null, "Reservación Creada");
          System.out.println("Lista tiquetes"+listaTiquete.getTiquetes()[listaTiquete.getApuntador()-1]);
     }//GEN-LAST:event_jButton11ActionPerformed
 
