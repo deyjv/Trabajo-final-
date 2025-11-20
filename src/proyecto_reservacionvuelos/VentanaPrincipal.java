@@ -806,13 +806,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-
-
-       listaFactura.agregarFacturaALista(new Factura("F#"+(int)Math.random()*10,listaReservacion.getReservaciones()[listaReservacion.getApuntador()-1],25000.0,listaVuelo.getVuelos()[listaVuelo.getApuntador()-1].getPrecio(seleccionarRadioBtn())));
-                txtAreaFactura.setText(listaFactura.imprimirLista());
-                
-                OcuparAsientoRadioBtn();
-            // public Factura(String idFactura, Reservar reservacion, double totalImpuestos, double precioTiquete) {
+   int indexReservacion = listaReservacion.getApuntador() - 1;
+    if (indexReservacion < 0 || indexReservacion >= listaReservacion.getReservaciones().length) {
+        JOptionPane.showMessageDialog(this, "Debe crear una reservación primero", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+     int indexVuelo = comboBoXReservOrigenDestino.getSelectedIndex();
+    if (indexVuelo < 0 || indexVuelo >= listaVuelo.getVuelos().length) {
+        JOptionPane.showMessageDialog(this, "Seleccione un vuelo válido", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    if (seleccionarRadioBtn().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Seleccione una clase (Ejecutiva o Económica)", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    String idFactura = "F#" + (int)(Math.random() * 10000);
+    
+    listaFactura.agregarFacturaALista(
+        new Factura(
+            idFactura,listaReservacion.getReservaciones()[indexReservacion],
+            25000.0,listaVuelo.getVuelos()[indexVuelo].getPrecio(seleccionarRadioBtn())));
+    txtAreaFactura.setText(listaFactura.imprimirLista());
+   
+    OcuparAsientoRadioBtn();
+    JOptionPane.showMessageDialog(this, "Factura generada exitosamente\nID: " + idFactura, "Éxito", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -864,9 +881,50 @@ cargarVuelosEnComboBoxVuelo();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       System.out.println("listaPasajero.getApuntador()-1 = "+listaPasajero.getApuntador());
-  listaTiquete.agregarTiqueteALista(new Tiquete(listaPasajero.getPasajeros()[listaPasajero.getApuntador()-1],"PNR:"+Math.random(),"f"+listaAvion.getApuntador(),"U"+Math.random(),"ABC-"+Math.random()));
- txtAreaTiquete.setText(listaTiquete.imprimirLista());
+
+    int indexVuelo = comboBoXReservOrigenDestino.getSelectedIndex();
+    if (indexVuelo < 0 || indexVuelo >= listaVuelo.getVuelos().length) {
+        JOptionPane.showMessageDialog(this, "Seleccione un vuelo primero", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    int indexPasajero = listaPasajero.getApuntador() - 1;
+    if (indexPasajero < 0 || indexPasajero >= listaPasajero.getPasajeros().length) {
+        JOptionPane.showMessageDialog(this, "Agregue un pasajero primero", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    String claseSeleccionada = seleccionarRadioBtn();
+    if (claseSeleccionada.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Seleccione una clase (Ejecutiva o Económica)", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    Vuelo vueloSeleccionado = listaVuelo.getVuelos()[indexVuelo];
+    
+    String pnr = "PNR" + (int)(Math.random() * 100000);
+    String asiento = claseSeleccionada.substring(0, 1) + (listaPasajero.getApuntador()); 
+    String puerta = "U" + (int)(Math.random() * 20 + 1);
+    String codigoAerolinea = "ABC-" + vueloSeleccionado.getCodigo();
+    
+    Tiquete nuevoTiquete = new Tiquete(
+        listaPasajero.getPasajeros()[indexPasajero],
+        pnr,
+        vueloSeleccionado.getCodigo(),
+        vueloSeleccionado.getOrigen(),              
+        vueloSeleccionado.getDestino(),
+        "2025-12-20 10:00", 
+        "2026-12-20 15:00",                         
+        asiento,
+        puerta,
+        codigoAerolinea,
+        claseSeleccionada
+    );
+    
+    listaTiquete.agregarTiqueteALista(nuevoTiquete);
+    txtAreaTiquete.setText(listaTiquete.imprimirLista());
+    
+    JOptionPane.showMessageDialog(this, "Tiquete generado exitosamente\nClase: " + claseSeleccionada, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

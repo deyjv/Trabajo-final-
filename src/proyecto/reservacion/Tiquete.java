@@ -17,11 +17,12 @@ public class Tiquete {
     private String numeroAsiento;
     private String puertaEmbarque; // puede ser null
     private String codigoAerolinea;
+    private String clase;
 
     public Tiquete() {
     }
 
-    public Tiquete(Pasajero pasa, String codigoPNR, String numeroVuelo, String aeropuertoOrigen, String aeropuertoDestino, String fechaHoraSalida, String fechaHoraLlegada, String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
+    public Tiquete(Pasajero pasa, String codigoPNR, String numeroVuelo, String aeropuertoOrigen, String aeropuertoDestino, String fechaHoraSalida, String fechaHoraLlegada, String numeroAsiento, String puertaEmbarque, String codigoAerolinea, String clase) {
         this.pasa = pasa;
         this.codigoPNR = codigoPNR;
         this.numeroVuelo = numeroVuelo;
@@ -32,6 +33,7 @@ public class Tiquete {
         this.numeroAsiento = numeroAsiento;
         this.puertaEmbarque = puertaEmbarque;
         this.codigoAerolinea = codigoAerolinea;
+        this.clase = clase;
     }
     
         public Tiquete(Pasajero pasa, String codigoPNR,String numeroAsiento, String puertaEmbarque, String codigoAerolinea) {
@@ -122,36 +124,19 @@ public class Tiquete {
         this.codigoAerolinea = codigoAerolinea;
     }
 
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+    
+
     @Override
     public String toString() {
         return "Tiquete{" + "pasa=" + pasa + ", codigoPNR=" + codigoPNR + ", numeroVuelo=" + numeroVuelo + ", aeropuertoOrigen=" + aeropuertoOrigen +
                 ", aeropuertoDestino=" + aeropuertoDestino + ", fechaHoraSalida=" + fechaHoraSalida + ", fechaHoraLlegada=" + fechaHoraLlegada +
-                ", numeroAsiento=" + numeroAsiento + ", puertaEmbarque=" + puertaEmbarque + ", codigoAerolinea=" + codigoAerolinea + '}';
+                ", numeroAsiento=" + numeroAsiento + ", puertaEmbarque=" + puertaEmbarque + ", codigoAerolinea=" + codigoAerolinea +", clase=" + clase + '}';
     }
-    
-    /*public static void main(String[] args) {
-        
-      
-Pasajero pasajero = new Pasajero("felix","hernandez","rose","Costaricense",700000000,"15/11/2003");
-
-
-Tiquete tiquete = new Tiquete(
-    pasajero,
-    "PNR123456",               // códigoPNR
-    "AV650",                   // númeroVuelo
-    "SJO",                     // aeropuertoOrigen
-    "LIM",                     // aeropuertoDestino
-    "2025-10-15T08:30",        // fechaHoraSalida
-    "2025-10-15T12:45",        // fechaHoraLlegada
-    "12A",                     // númeroAsiento
-    "G5",                      // puertaEmbarque (puede ser null)
-    "AV"                       // códigoAerolinea
-);
-        System.out.println(tiquete);
-        
-    }
-    
-    
-}
-*/
 }
